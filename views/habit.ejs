@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do List</title>
+    <link rel="stylesheet" href="/style/style.css">
+    
+</head>
+<body>
+  
+ 
+    <%- include("partials/header.ejs") %>
+    <div class="container">
+    <h1 class="top">Daily habits pave the way for lasting success – keep going!
+    </h1>
+    
+    
+    <ul id="work-list" >
+        <%  for(let i=0; i< newHabits.length; i++){ %>
+            <li class="work-item" >
+                <input type="checkbox" id="checkbox<%= i %>" class="checkbox">
+                <label for="checkbox<%= i %>"> <%= newHabits[i] %></label>
+               
+               
+              </li>
+        <% } %>
+        
+        <form action="/habitList" method="post" >
+            <input type="text" name="newItem3" class="input" placeholder="Add a new task">
+            <button type="submit" class="add-button" >Add</button>
+
+        </form>
+    </ul>
+    </div>
+    <%- include("partials/footer.ejs") %>
+    <script>
+        const checkboxes = document.querySelectorAll('.checkbox');
+    
+        checkboxes.forEach(function(checkbox) {
+            checkbox.addEventListener('change', function() {
+                const label = checkbox.nextElementSibling;
+                if (checkbox.checked) {
+                    label.style.textDecoration = 'line-through';
+                } else {
+                    label.style.textDecoration = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

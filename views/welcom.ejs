@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myto-do list</title>
+    <link rel="stylesheet" href="/style/style.css">
+</head>
+<body>
+    
+    <%- include("partials/header.ejs") %>
+
+    <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+        <h1 class="display-4 fw-normal header">Welcome to My To-Do List App</h1>
+        <p class="fs-5 text-muted header">Stay organized and get things done with our simple and effective to-do list app.</p>
+        <div>
+            <div class="d-grid gap-1 col-2 mx-auto">
+                <a href="/today" class="btn btn-primary btn-lg btn-outline-dark frontlink" type="button">Today</a>
+                <a href="/work" class="btn btn-primary btn-lg btn-outline-dark frontlink" type="button">Work</a>
+                <a href="/habit" class="btn btn-primary btn-lg btn-outline-dark frontlink habit" type="button">Habit</a>
+              </div>
+           </div>
+      </div>
+  
+   
+
+<%- include("partials/footer.ejs") %>
+</body>
+</html>
